@@ -1,0 +1,131 @@
+$boxSize: 3rem;
+
+* {
+  user-select: none;
+
+  ::-moz-selection {
+    color: white;
+    background: black;
+  }
+
+  ::selection {
+    color: white;
+    background: black;
+  }
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  justify-content: space-evenly;
+  margin-top: 3em;
+}
+
+.matrices, .result-matrix {
+  font-size: large;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+
+  .matrix {
+    justify-content: flex-end;
+  }
+}
+
+.column-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 8rem 4px 8rem;
+}
+
+.row-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+
+button {
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  box-shadow: inset 0 0 0 2px #AAAAAA;
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 2px;
+
+  &:hover {
+    box-shadow: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.multiply-button {
+  width: 7rem;
+  justify-self: center;
+  margin-top: 2rem;
+  font-size: large;
+  font-weight: bolder;
+}
+
+table {
+  margin: 0 3rem;
+
+  tr {
+    display: flex;
+
+    td {
+      user-select: initial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $boxSize;
+      height: $boxSize;
+      margin: 2px;
+      border: 2px solid #AAAAAA;
+      border-radius: 4px;
+
+      input {
+        &::-moz-selection {
+          color: black;
+          background: white;
+        }
+
+        &::selection {
+          color: black;
+          background: white;
+        }
+
+        background: none;
+        font-size: large;
+        font-weight: bolder;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        text-align: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:focus, &:hover {
+          background-color: black;
+          overflow: hidden;
+          outline: 2px solid black;
+          border-radius: 2px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.result-matrix {
+  padding-top: 2em;
+  justify-self: center;
+}

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="column-controls">
+    <div>
+      <button (click)="removeColumn()">-</button>
+      <button (click)="addColumn()">+</button>
+    </div>
+    <div>
+      <button (click)="addRow()">+</button>
+      <button (click)="removeRow()">-</button>
+    </div>
+
+  </div>
+  <div class="matrices">
+    <div class="row-controls">
+      <button (click)="removeRow()">-</button>
+      <button (click)="addRow()">+</button>
+    </div>
+
+    <div *ngFor="let matrix of matrices; let m = index; trackBy: trackByMatrix" class="matrix">
+      <table>
+        <tr *ngFor="let row of matrix; let i = index; trackBy: trackByRow">
+          <td *ngFor="let data of row; let j = index; trackBy: trackByData">
+            <input [(ngModel)]="matrices[m][i][j]" type="number">
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="row-controls">
+      <button (click)="removeColumn()">-</button>
+      <button (click)="addColumn()">+</button>
+    </div>
+  </div>
+<button class="multiply-button" (click)="multiplyMatrices()">MULTIPLY</button>
+
+<div class="result-matrix">
+  <table>
+    <tr *ngFor="let row of resultMatrix; let i = index; trackBy: trackByRow">
+      <td *ngFor="let data of row; let j = index; trackBy: trackByData">
+        <span>{{data}}</span>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
